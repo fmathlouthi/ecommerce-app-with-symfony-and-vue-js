@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+{# Edit product view. List products for editing, and allow editing them. Only admin users get to this view.
+Editing works by pressing the "edit product" button. It gets the form with pre-filled values from a controller
+through jQuery Ajax. You then submit the form, the product is updated in the database and you return to this view
+with a success message.
+
+You can also make produts featured or remove them from featured products, also works with ajax.
+
+#}
+{% block title %}
+    Edit products
+{% endblock %}
+{% block vue_head %}
+    {{ encore_entry_link_tags('main') }}
+{% endblock %}
+{% block body %}
+
+
+    <div id="result">
+        {# Display success or other message coming from a controller. #}
+        {% if app.request.get('message') is defined %}
+            {{ app.request.get('message') }}
+        {% endif %}
+    </div>
+    <div id="app">
+        <edit-products>
+        </edit-products>
+    </div>
+
+{%  endblock %}
+
+{% block vue_scripts %}
+    {{ encore_entry_script_tags('main') }}
+{% endblock %}

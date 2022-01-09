@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{# Admin index view, just links at the moment. Only admin users get to this view. #}
+
+{% block title %}Admin view{% endblock %}
+
+{% block body %}
+    <h2>Welcome to admin view</h2>
+    <p><a href="{{ path('add_product') }}">Add a new product</a></p>
+    <p><a href="{{ path('edit_product_view') }}">Edit products</a></p>
+    <h5>CMS actions</h5>
+    <p><a href="{{ path('cms_change_banner') }}">Change banner</a></p>
+{% endblock %}

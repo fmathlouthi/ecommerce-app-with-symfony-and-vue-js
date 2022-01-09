@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{# List all products. Allow adding products to shopping cart (uses ajax). #}
+{% block title %}
+Products listing
+{% endblock %}
+{% block vue_head %}
+    {{ encore_entry_link_tags('main') }}
+{% endblock %}
+{% block body %}
+    <div id="app">
+        <list-products>
+        </list-products>
+    </div>
+
+{%  endblock %}
+{% block javascripts %}
+{% endblock %}
+{% block vue_scripts %}
+    {{ encore_entry_script_tags('main') }}
+{% endblock %}
